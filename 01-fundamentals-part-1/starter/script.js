@@ -1,81 +1,81 @@
-// // // JavaScript Fundamentals - Hour 1
-// // // My first JavaScript code!
+// // JavaScript Fundamentals - Hour 1
+// // My first JavaScript code!
 
-// // let js = "amazing";
-// // console.log(40 + 8 + 23 - 10);
+// let js = "amazing";
+// console.log(40 + 8 + 23 - 10);
 
-// // console.log("=== VARIABLES ===");
+// console.log("=== VARIABLES ===");
 
-// // let firstName = "Aki";
-// // console.log(firstName);
+// let firstName = "Aki";
+// console.log(firstName);
 
-// // let age = 30;
-// // console.log(age);
+// let age = 30;
+// console.log(age);
 
-// // age = 20;
-// // console.log(age);
+// age = 20;
+// console.log(age);
 
-// // const birthYear = 2005;
-// // console.log(birthYear);
+// const birthYear = 2005;
+// console.log(birthYear);
 
-// // const PI = 3.1415;
-// // console.log(PI);
+// const PI = 3.1415;
+// console.log(PI);
 
-// // //do not use var
-// // var job = "programmer";
-
-
-
-// // // Good Variable Names
-// // let lastName = "Feraren";
-// // let myCurrentJob = "Developer";
-// // let PIZ = 3.14
-
-
-// // // Bad Variable Name
-// // // let 3years
-// // // let jonas&mathilda
-// // // let new
-
-
-// // const country = "Japan";
-// // const language = "Japanese";
-// // const population = 126476461;
-
-// // // use let only when you need to change the value
-// // let ageNow = 25;
-// // ageNow = 26;
-
-
-// // console.log("=== DATA TYPES ===");
-
-// // let weight = 45;
-// // console.log(weight);
-// // console.log(typeof age);
-
-// // // Boolean
-// //  let javascriptIsFun = true;
-// //  console.log(javascriptIsFun);
-// //  console.log(typeof javascriptIsFun);
-
-// //  let year;
-// //  console.log(year);
-// //  console.log(typeof year);
-
-// //  console.log("=== DYNAMICVARIABLES ===");
-
-// //  let dynamicVariable = 23;
-// //  console.log(dynamicVariable, typeof dynamicVariable)
-
-// //  dynamicVariable = "Now i am a string";
-// //  console.log(dynamicVariable, typeof dynamicVariable)
-
-// //  dynamicVariable = true;
-// //  console.log(dynamicVariable, typeof dynamicVariable)
+// //do not use var
+// var job = "programmer";
 
 
 
-// //--------------------------------------------------------------------------------------------
+// // Good Variable Names
+// let lastName = "Feraren";
+// let myCurrentJob = "Developer";
+// let PIZ = 3.14
+
+
+// // Bad Variable Name
+// // let 3years
+// // let jonas&mathilda
+// // let new
+
+
+// const country = "Japan";
+// const language = "Japanese";
+// const population = 126476461;
+
+// // use let only when you need to change the value
+// let ageNow = 25;
+// ageNow = 26;
+
+
+// console.log("=== DATA TYPES ===");
+
+// let weight = 45;
+// console.log(weight);
+// console.log(typeof age);
+
+// // Boolean
+//  let javascriptIsFun = true;
+//  console.log(javascriptIsFun);
+//  console.log(typeof javascriptIsFun);
+
+//  let year;
+//  console.log(year);
+//  console.log(typeof year);
+
+//  console.log("=== DYNAMICVARIABLES ===");
+
+//  let dynamicVariable = 23;
+//  console.log(dynamicVariable, typeof dynamicVariable)
+
+//  dynamicVariable = "Now i am a string";
+//  console.log(dynamicVariable, typeof dynamicVariable)
+
+//  dynamicVariable = true;
+//  console.log(dynamicVariable, typeof dynamicVariable)
+
+
+
+//--------------------------------------------------------------------------------------------
 
 
 
@@ -173,47 +173,83 @@
 
 // ////////////////////////////////////
 // Operator Precedence
-console.log("=== OPERATOR PRECEDENCE ===");
-const now = 2037;
-const ageJonas = now - 1991;
-const ageAki = now - 2018;
+// console.log("=== OPERATOR PRECEDENCE ===");
+// const now = 2037;
+// const ageJonas = now - 1991;
+// const ageAki = now - 2018;
 
-console.log(now - 1991 > now - 2018);
+// console.log(now - 1991 > now - 2018);
 
-let x, y;
-x = y = 25 - 10 -5;
-console.log(x, y);
+// let x, y;
+// x = y = 25 - 10 -5;
+// console.log(x, y);
 
-const averageAge = (ageJonas + ageAki) /2;
-console.log(ageJonas, ageAki, averageAge);
+// const averageAge = (ageJonas + ageAki) /2;
+// console.log(ageJonas, ageAki, averageAge);
+
+// ////////////////////////////////////
+// // Coding Challenge #1 - BMI Calculator
+// //TEST DATA 1
+// const weightMark = 78;
+// const heightMark = 1.69;
+
+// const weightJohn = 92;
+// const heightJohn = 1.95;
+
+// const BMIMark = weightMark / heightMark ** 2;
+// const BMIJohn = weightJohn / heightJohn ** 2;
+
+// console.log(BMIMark);
+// console.log(BMIJohn);
+
+// console.log("Mark has a higher BMI than John =", + BMIMark > BMIJohn);
+
+// //TEST DATA 2
+// const weightMark2 = 95;
+// const heightMark2 = 1.88;
+
+// const weightJohn2 = 85;
+// const heightJohn2 = 1.76;
+
+// const BMIMark2 = weightMark2 / heightMark2 ** 2;
+// const BMIJohn2 = weightJohn2 / heightJohn2 ** 2;
+
+// console.log(BMIMark);
+// console.log(BMIJohn);
+
+// console.log("Mark has a higher BMI than John =", + BMIMark2 > BMIJohn2);
 
 
-//TEST DATA 1
-let weightMark = 78;
-let heightMark = 1.69;
+////////////////////////////////////
+// Strings and Template Literals
+const firstName = "Jonas";
+const job = "teacher";
+const birthYear = 1991;
+const year = 2037;
 
-let weightJohn = 92;
-let heightJohn = 1.95;
+const jonas =
+  "I'm " + firstName + ", a " + (year - birthYear) + " year old " + job + "!";
+console.log(jonas);
 
-let BMIMark = weightMark / heightMark ** 2;
-let BMIJohn = weightJohn / heightJohn ** 2;
 
-console.log(BMIMark);
-console.log(BMIJohn);
 
-console.log("Does Mark has a higher BMI than John", + BMIMark > BMIJohn);
+// The modern way - ES6 Template Literals
+const jonasNew = `I'm ${firstName}, a ${year - birthYear} year old ${job}!`;
+console.log(jonasNew);
 
-let weightMark2 = 95;
-let heightMark2 = 1.88;
+// Any expression works inside ${}
+console.log(`I'm ${2037 - 1991} years old`)
+console.log(`Math works: ${2 + 3} equals five`);
+console.log(`Comparisons too: ${5 > 3}`);
 
-let weightJohn2 = 85;
-let heightJohn2 = 1.76;
+console.log(`this is just a regular stringh?....`);
 
-let BMIMark2 = weightMark2 / heightMark2 ** 2;
-let BMIJohn2 = weightJohn2 / heightJohn2 ** 2;
-
-console.log(BMIMark);
-console.log(BMIJohn);
-
-console.log("Does Mark has a higher BMI than John", + BMIMark2 > BMIJohn2);
-
+////////////////////////////////////
+// Taking Decisions: if / else Statements
+const age = 15;
+if (age >= 18){
+    console.log(`Aki can start driving license🚗`);
+}else{
+    const  yearLeft = 18 - age;
+    console.log(`Aki is too young. Wait another ${yearLeft} years!`);
+}
