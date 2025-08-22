@@ -253,3 +253,58 @@ if (age >= 18){
     const  yearLeft = 18 - age;
     console.log(`Aki is too young. Wait another ${yearLeft} years!`);
 }
+
+////////////////////////////////////
+// Truthy and Falsy Values
+console.log(Boolean(0)); // false
+console.log(Boolean(undefined)); // false
+console.log(Boolean("Jonas")); // true
+console.log(Boolean({})); // true (empty object)
+console.log(Boolean("")); // false (empty string)
+
+const money = 100;
+
+if (money) {
+    console.log((`Dont spent it all ;`));
+}else{
+    console.log(`You should get a job!`);
+    
+}
+
+let height = 0;
+if (height) {
+    console.log(`yeyyyy Height is defined`);
+} else {
+    console.log(`Height is UNDEFINED`);
+}
+
+if (height !== undefined) {
+  console.log("Height is defined");
+}
+
+////////////////////////////////////
+// Coding Challenge #2
+
+// Reuse your BMI calculation from Challenge #1
+const massMark = 78;
+const heightMark = 1.69;
+const massJohn = 92;
+const heightJohn = 1.95;
+
+const BMIMark = massMark / heightMark ** 2;
+const BMIJohn = massJohn / (heightJohn * heightJohn);
+console.log(BMIMark, BMIJohn);
+
+// Your if/else statement here:
+// Compare BMIs and create intelligent messages
+// Use template literals for beautiful output
+
+if (BMIMark > BMIJohn){
+    console.log(`Marks BMI is ${BMIMark} and is higher than Johns BMI of ${BMIJohn} and it is higher than ${BMIJohn}`)
+    
+} else if (BMIJohn > BMIMark){
+    console.log(`Johns BMI is ${BMIJohn} and is higher than Marks BMI of ${BMIMark}`)
+}
+else {
+    console.log(`Both have the same BMI of ${BMIMark}`);
+}
