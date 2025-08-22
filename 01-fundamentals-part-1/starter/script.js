@@ -222,89 +222,89 @@
 
 ////////////////////////////////////
 // Strings and Template Literals
-const firstName = "Jonas";
-const job = "teacher";
-const birthYear = 1991;
-const year = 2037;
+// const firstName = "Jonas";
+// const job = "teacher";
+// const birthYear = 1991;
+// const year = 2037;
 
-const jonas =
-  "I'm " + firstName + ", a " + (year - birthYear) + " year old " + job + "!";
-console.log(jonas);
+// const jonas =
+//   "I'm " + firstName + ", a " + (year - birthYear) + " year old " + job + "!";
+// console.log(jonas);
 
 
 
-// The modern way - ES6 Template Literals
-const jonasNew = `I'm ${firstName}, a ${year - birthYear} year old ${job}!`;
-console.log(jonasNew);
+// // The modern way - ES6 Template Literals
+// const jonasNew = `I'm ${firstName}, a ${year - birthYear} year old ${job}!`;
+// console.log(jonasNew);
 
-// Any expression works inside ${}
-console.log(`I'm ${2037 - 1991} years old`)
-console.log(`Math works: ${2 + 3} equals five`);
-console.log(`Comparisons too: ${5 > 3}`);
+// // Any expression works inside ${}
+// console.log(`I'm ${2037 - 1991} years old`)
+// console.log(`Math works: ${2 + 3} equals five`);
+// console.log(`Comparisons too: ${5 > 3}`);
 
-console.log(`this is just a regular stringh?....`);
+// console.log(`this is just a regular stringh?....`);
 
-////////////////////////////////////
-// Taking Decisions: if / else Statements
-const age = 15;
-if (age >= 18){
-    console.log(`Aki can start driving license🚗`);
-}else{
-    const  yearLeft = 18 - age;
-    console.log(`Aki is too young. Wait another ${yearLeft} years!`);
-}
+// ////////////////////////////////////
+// // Taking Decisions: if / else Statements
+// const age = 15;
+// if (age >= 18){
+//     console.log(`Aki can start driving license🚗`);
+// }else{
+//     const  yearLeft = 18 - age;
+//     console.log(`Aki is too young. Wait another ${yearLeft} years!`);
+// }
 
-////////////////////////////////////
-// Truthy and Falsy Values
-console.log(Boolean(0)); // false
-console.log(Boolean(undefined)); // false
-console.log(Boolean("Jonas")); // true
-console.log(Boolean({})); // true (empty object)
-console.log(Boolean("")); // false (empty string)
+// ////////////////////////////////////
+// // Truthy and Falsy Values
+// console.log(Boolean(0)); // false
+// console.log(Boolean(undefined)); // false
+// console.log(Boolean("Jonas")); // true
+// console.log(Boolean({})); // true (empty object)
+// console.log(Boolean("")); // false (empty string)
 
-const money = 100;
+// const money = 100;
 
-if (money) {
-    console.log((`Dont spent it all ;`));
-}else{
-    console.log(`You should get a job!`);
+// if (money) {
+//     console.log((`Dont spent it all ;`));
+// }else{
+//     console.log(`You should get a job!`);
     
-}
+// }
 
-let height = 0;
-if (height) {
-    console.log(`yeyyyy Height is defined`);
-} else {
-    console.log(`Height is UNDEFINED`);
-}
+// let height = 0;
+// if (height) {
+//     console.log(`yeyyyy Height is defined`);
+// } else {
+//     console.log(`Height is UNDEFINED`);
+// }
 
-if (height !== undefined) {
-  console.log("Height is defined");
-}
+// if (height !== undefined) {
+//   console.log("Height is defined");
+// }
 
-////////////////////////////////////
-// Coding Challenge #2
+// ////////////////////////////////////
+// // Coding Challenge #2
 
-// Reuse your BMI calculation from Challenge #1
-const massMark = 78;
-const heightMark = 1.69;
-const massJohn = 92;
-const heightJohn = 1.95;
+// // Reuse your BMI calculation from Challenge #1
+// const massMark = 78;
+// const heightMark = 1.69;
+// const massJohn = 92;
+// const heightJohn = 1.95;
 
-const BMIMark = massMark / heightMark ** 2;
-const BMIJohn = massJohn / (heightJohn * heightJohn);
-console.log(BMIMark, BMIJohn);
+// const BMIMark = massMark / heightMark ** 2;
+// const BMIJohn = massJohn / (heightJohn * heightJohn);
+// console.log(BMIMark, BMIJohn);
 
-// Your if/else statement here:
-// Compare BMIs and create intelligent messages
-// Use template literals for beautiful output
+// // Your if/else statement here:
+// // Compare BMIs and create intelligent messages
+// // Use template literals for beautiful output
 
-if (BMIMark > BMIJohn){
-    console.log(`Marks BMI is ${BMIMark} and is higher than Johns BMI of ${BMIJohn} and it is higher than ${BMIJohn}`)
+// if (BMIMark > BMIJohn){
+//     console.log(`Marks BMI is ${BMIMark} and is higher than Johns BMI of ${BMIJohn} and it is higher than ${BMIJohn}`)
     
-} else if (BMIJohn > BMIMark){
-    console.log(`Johns BMI is ${BMIJohn} and is higher than Marks BMI of ${BMIMark}`)
-}
-else {
-    console.log(`Both have the same BMI of ${BMIMark}`);
-}
+// } else if (BMIJohn > BMIMark){
+//     console.log(`Johns BMI is ${BMIJohn} and is higher than Marks BMI of ${BMIMark}`)
+// }
+// else {
+//     console.log(`Both have the same BMI of ${BMIMark}`);
+// }
