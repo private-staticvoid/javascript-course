@@ -323,249 +323,440 @@
 // console.log(`Highest Grade: ${findHighestGrade(grades3)}`);
 // console.log(`Lowest Grade: ${findLowestGrade(grades3)}`);
 
-// ===============================
-// OBJECTS IN JAVASCRIPT
-// ===============================
-console.log("=== OBJECTS ===");     
+// // ===============================
+// // OBJECTS IN JAVASCRIPT
+// // ===============================
+// console.log("=== OBJECTS ===");     
 
-// Example of object creation using object literal syntax
-const achiles = {
-    firstName: "Achiles",
-    lastName: "Troy",
-    age: 2037 - 1991,
-    job: "teacher",
-    friends: ["Michael", "Peter", "Steven"],
-};
+// // Example of object creation using object literal syntax
+// const achiles = {
+//     firstName: "Achiles",
+//     lastName: "Troy",
+//     age: 2037 - 1991,
+//     job: "teacher",
+//     friends: ["Michael", "Peter", "Steven"],
+// };
 
-console.log(achiles);
-console.log(achiles.firstName);
-console.log(achiles.lastName);
-console.log(achiles.age);
-console.log(achiles.job);
-console.log(achiles.friends);
+// console.log(achiles);
+// console.log(achiles.firstName);
+// console.log(achiles.lastName);
+// console.log(achiles.age);
+// console.log(achiles.job);
+// console.log(achiles.friends);
 
-// Accessing with bracket notation
-console.log(achiles["firstName"]);
-console.log(achiles["lastName"]);
-console.log(achiles["age"]);
+// // Accessing with bracket notation
+// console.log(achiles["firstName"]);
+// console.log(achiles["lastName"]);
+// console.log(achiles["age"]);
 
-const nameKey = "Name";
-console.log(achiles["first" + nameKey]);
-console.log(achiles["last" + nameKey]);
+// const nameKey = "Name";
+// console.log(achiles["first" + nameKey]);
+// console.log(achiles["last" + nameKey]);
 
-// Updating object values
-achiles.job = "programmer";
-achiles["age"] = 35;
-achiles.location = "Philippines";
-achiles["twitter"] = "@aki_troy";
-achiles.hasDriversLicense = true;
-console.log(achiles);
+// // Updating object values
+// achiles.job = "programmer";
+// achiles["age"] = 35;
+// achiles.location = "Philippines";
+// achiles["twitter"] = "@aki_troy";
+// achiles.hasDriversLicense = true;
+// console.log(achiles);
 
-// ===============================
-// Exercise 1: Personal Object
-// ===============================
+// // ===============================
+// // Exercise 1: Personal Object
+// // ===============================
 
-const book = {
-    title: "The Little Prince",
-    author: "Antoine de Saint-Exupéry",
-    pages: 96,
-    isRead: true,
-};
+// const book = {
+//     title: "The Little Prince",
+//     author: "Antoine de Saint-Exupéry",
+//     pages: 96,
+//     isRead: true,
+// };
 
-// Accessing properties
-console.log(book.title);
+// // Accessing properties
+// console.log(book.title);
 
-// Adding more properties
-book.synopsis = "The Little Prince tells the story of a young prince who travels from planet to planet, meeting various inhabitants and learning life lessons about love, responsibility, and human nature.";
-book["yearPublished"] = 1943;
+// // Adding more properties
+// book.synopsis = "The Little Prince tells the story of a young prince who travels from planet to planet, meeting various inhabitants and learning life lessons about love, responsibility, and human nature.";
+// book["yearPublished"] = 1943;
 
-console.log(book);
+// console.log(book);
 
 
-const playlist = {
-    name: "TWICE Favorites",
-    creator: "Achiles Troy",
-    songs: ["Feel Special", "Fancy", "TT", "Cheer Up", "What is Love?", "I Can't Stop Me"],
-    genre: "K-Pop",
-};
+// const playlist = {
+//     name: "TWICE Favorites",
+//     creator: "Achiles Troy",
+//     songs: ["Feel Special", "Fancy", "TT", "Cheer Up", "What is Love?", "I Can't Stop Me"],
+//     genre: "K-Pop",
+// };
 
-// Accessing playlist creator
-console.log(playlist["creator"]);
+// // Accessing playlist creator
+// console.log(playlist["creator"]);
 
-// Adding properties to playlist
-playlist.yearCreated = 2025;
-playlist["description"] = "A collection of TWICE's most iconic songs.";
+// // Adding properties to playlist
+// playlist.yearCreated = 2025;
+// playlist["description"] = "A collection of TWICE's most iconic songs.";
 
-// Updating year
-playlist["yearCreated"] = 2025;
+// // Updating year
+// playlist["yearCreated"] = 2025;
 
-console.log(playlist);
-// Nested objects
-const student = {
-    name: "Aki",
-    grades: [85, 92, 78],
-    address: {
-        street: "123 Main St",
-        city: "Quezon City",
-    },
-};
+// console.log(playlist);
+// // Nested objects
+// const student = {
+//     name: "Aki",
+//     grades: [85, 92, 78],
+//     address: {
+//         street: "123 Main St",
+//         city: "Quezon City",
+//     },
+// };
 
-console.log(student.grades[0]);
-console.log(student.address.city);
+// console.log(student.grades[0]);
+// console.log(student.address.city);
 
-// ===============================
-// Methods in Objects
-// ===============================
-const achiles2 = {
-    firstName: "Achiles",
-    lastName: "Troy",
-    birthYear: 1991,
-    job: "teacher",
-    friends: ["Michael", "Peter", "Steven"],
-    hasDriversLicense: true,
-    calcAge: function (birthYear) {
-        return 2037 - birthYear;
-    },
-};
+// // ===============================
+// // Methods in Objects
+// // ===============================
+// const achiles2 = {
+//     firstName: "Achiles",
+//     lastName: "Troy",
+//     birthYear: 1991,
+//     job: "teacher",
+//     friends: ["Michael", "Peter", "Steven"],
+//     hasDriversLicense: true,
+//     calcAge: function (birthYear) {
+//         return 2037 - birthYear;
+//     },
+// };
 
-console.log(achiles2.calcAge(1991));
-console.log(achiles2.calcAge(achiles2.birthYear));
+// console.log(achiles2.calcAge(1991));
+// console.log(achiles2.calcAge(achiles2.birthYear));
 
-// Improved with `this`
-const achilesImproved = {
-    firstName: "Achiles",
-    lastName: "Troy",
-    birthYear: 1991,
-    job: "teacher",
-    friends: ["Michael", "Peter", "Steven"],
-    hasDriversLicense: true,
+// // Improved with `this`
+// const achilesImproved = {
+//     firstName: "Achiles",
+//     lastName: "Troy",
+//     birthYear: 1991,
+//     job: "teacher",
+//     friends: ["Michael", "Peter", "Steven"],
+//     hasDriversLicense: true,
 
-    calcAge: function () {
-        return 2037 - this.birthYear;
-    },
-};
+//     calcAge: function () {
+//         return 2037 - this.birthYear;
+//     },
+// };
 
-console.log(achilesImproved.calcAge());
+// console.log(achilesImproved.calcAge());
 
-// Advanced object with computed age and summary
-const achilesAdvanced = {
-    firstName: "Achiles",
-    lastName: "Troy",
-    birthYear: 1991,
-    job: "teacher",
-    friends: ["Michael", "Peter", "Steven"],
-    hasDriversLicense: true,
+// // Advanced object with computed age and summary
+// const achilesAdvanced = {
+//     firstName: "Achiles",
+//     lastName: "Troy",
+//     birthYear: 1991,
+//     job: "teacher",
+//     friends: ["Michael", "Peter", "Steven"],
+//     hasDriversLicense: true,
 
-    calcAge: function () {
-        this.age = 2037 - this.birthYear;
-        return this.age;
-    },
+//     calcAge: function () {
+//         this.age = 2037 - this.birthYear;
+//         return this.age;
+//     },
 
-    getSummary: function () {
-        return `${this.firstName} is a ${this.calcAge()}-year old ${this.job}, and he has ${this.hasDriversLicense ? "a" : "no"} driver's license.`;
-    },
-};
+//     getSummary: function () {
+//         return `${this.firstName} is a ${this.calcAge()}-year old ${this.job}, and he has ${this.hasDriversLicense ? "a" : "no"} driver's license.`;
+//     },
+// };
 
-console.log(achilesAdvanced.calcAge());
-console.log(achilesAdvanced.age);
-console.log(achilesAdvanced.getSummary());
+// console.log(achilesAdvanced.calcAge());
+// console.log(achilesAdvanced.age);
+// console.log(achilesAdvanced.getSummary());
 
-// ===============================
-// Exercise 2: Calculator Object
-// ===============================
-const calculator = {
-    num1: 10,
-    num2: 5,
-    operator: "+",
+// // ===============================
+// // Exercise 2: Calculator Object
+// // ===============================
+// const calculator = {
+//     num1: 10,
+//     num2: 5,
+//     operator: "+",
 
-    add: function () {
-        this.res = this.num1 + this.num2;
-        return this.res;
-    },
-    subtract: function () {
-        this.res = this.num1 - this.num2;
-        return this.res;
-    },
-    multiply: function () {
-        this.res = this.num1 * this.num2;
-        return this.res;
-    },
-    divide: function () {
-        this.res = this.num1 / this.num2;
-        return this.res;
-    },
+//     add: function () {
+//         this.res = this.num1 + this.num2;
+//         return this.res;
+//     },
+//     subtract: function () {
+//         this.res = this.num1 - this.num2;
+//         return this.res;
+//     },
+//     multiply: function () {
+//         this.res = this.num1 * this.num2;
+//         return this.res;
+//     },
+//     divide: function () {
+//         this.res = this.num1 / this.num2;
+//         return this.res;
+//     },
 
-    calculate: function () {
-        if (this.operator === `+`) return this.add();
-        else if (this.operator === `-`) return this.subtract();
-        else if (this.operator === `*`) return this.multiply();
-        else if (this.operator === `/`) return this.divide();
-        else console.log("Invalid operator");
-    },
+//     calculate: function () {
+//         if (this.operator === `+`) return this.add();
+//         else if (this.operator === `-`) return this.subtract();
+//         else if (this.operator === `*`) return this.multiply();
+//         else if (this.operator === `/`) return this.divide();
+//         else console.log("Invalid operator");
+//     },
 
-    getResult: function () {
-        return `${this.num1} ${this.operator} ${this.num2} = ${this.calculate()}`;
-    },
-};
+//     getResult: function () {
+//         return `${this.num1} ${this.operator} ${this.num2} = ${this.calculate()}`;
+//     },
+// };
 
-console.log(calculator.calculate());
-console.log(calculator.getResult());
+// console.log(calculator.calculate());
+// console.log(calculator.getResult());
 
-// ===============================
-// Challenge 3: User Object
-// ===============================
-const user = {
-    firstName: "Aki",
-    lastName: "Troy",
-    birthYear: 1995,
-    location: "Manila",
-    interests: ["photography", "travel", "coding"],
-    friends: [
-        { name: "Michael", status: "active" },
-        { name: "Emma", status: "inactive" },
-        { name: "David", status: "active" },
-    ],
-    isActive: true,
+// // ===============================
+// // Challenge 3: User Object
+// // ===============================
+// const user = {
+//     firstName: "Aki",
+//     lastName: "Troy",
+//     birthYear: 1995,
+//     location: "Manila",
+//     interests: ["photography", "travel", "coding"],
+//     friends: [
+//         { name: "Michael", status: "active" },
+//         { name: "Emma", status: "inactive" },
+//         { name: "David", status: "active" },
+//     ],
+//     isActive: true,
 
-    calcAge: function () {
-        this.age = new Date().getFullYear() - this.birthYear;
-        return this.age;
-    },
+//     calcAge: function () {
+//         this.age = new Date().getFullYear() - this.birthYear;
+//         return this.age;
+//     },
 
-    addFriend: function (name, status = "active") {
-        this.friends.push({ name, status });
-        return this.friends;
-    },
+//     addFriend: function (name, status = "active") {
+//         this.friends.push({ name, status });
+//         return this.friends;
+//     },
 
-    getActiveFriends: function () {
-        return this.friends.filter((friend) => friend.status === "active");
-    },
+//     getActiveFriends: function () {
+//         return this.friends.filter((friend) => friend.status === "active");
+//     },
 
-    toggleStatus: function () {
-        this.isActive = !this.isActive;
-        return this.isActive;
-    },
+//     toggleStatus: function () {
+//         this.isActive = !this.isActive;
+//         return this.isActive;
+//     },
 
-    getSummary: function () {
-        return ` 
-            Name: ${this.firstName} ${this.lastName}
-            Status: ${this.isActive ? "Active" : "Inactive"}
-            Has ${this.friends.length} friends
+//     getSummary: function () {
+//         return ` 
+//             Name: ${this.firstName} ${this.lastName}
+//             Status: ${this.isActive ? "Active" : "Inactive"}
+//             Has ${this.friends.length} friends
 
-            About:
-            Age: ${this.calcAge()} years old
-            Birth Year: ${this.birthYear}
-            Location: ${this.location}
-            Interests: ${this.interests.join(", ")}
+//             About:
+//             Age: ${this.calcAge()} years old
+//             Birth Year: ${this.birthYear}
+//             Location: ${this.location}
+//             Interests: ${this.interests.join(", ")}
 
-            Active Friends:
-            ${this.getActiveFriends().map((f) => `${f.name} (${f.status})`).join("\n            ")}
-        `;
-    },
-};
+//             Active Friends:
+//             ${this.getActiveFriends().map((f) => `${f.name} (${f.status})`).join("\n            ")}
+//         `;
+//     },
+// };
 
-console.log(user.getSummary());
-user.addFriend("Alex", "active");
-user.toggleStatus();
-console.log(`\nAfter updates:`);
-console.log(user.getSummary());
+// console.log(user.getSummary());
+// user.addFriend("Alex", "active");
+// user.toggleStatus();
+// console.log(`\nAfter updates:`);
+// console.log(user.getSummary());
+
+
+//  // ===============================
+//  //  Selecting DOM Elements
+//  // ===============================
+
+//  const message = document.querySelector(".message");
+//  //get ys tge entire element object  with all its properties
+//  console.log(message);
+
+//  const button = document.getElementById("btn");
+//  console.log(button);
+
+//  const heading = document.querySelector("h1");
+//  console.log(heading);
+// // query selector returns the fireth matching element
+//  console.log(message.textContent);
+// console.log(button.id);
+// console.log(heading.tagName);
+// console.log(heading.textContent);
+
+
+// //get elementById
+// const buttonById = document.getElementById("btn");
+// console.log(buttonById);
+// console.log(buttonById === button);
+
+// // querySelector All - Multiple Elements
+// const allParagraphs = document.querySelectorAll("p");
+// console.log(allParagraphs);
+// console.log(allParagraphs[0]);
+// console.log(allParagraphs[1]);
+
+ // ===============================
+ //  Modifying element Content
+ // ===============================
+
+//  //text content
+//  const message = document.querySelector(".message");
+// console.log(message.textContent);
+// message.textContent = "Hello, Aki! Welcome to JavaScript DOM Manipulation.";
+// console.log(message.textContent);
+
+// //innerHTML
+// message.innerHTML = "<strong>Hello, Aki!</strong> This is updated content.";
+
+// // innerText
+// console.log(message.innerText);
+
+
+// // Input Element Valies
+// const input = document.querySelector(".guess");
+// console.log(input.value);
+// input.value = "Default Text";
+
+// const heading = document.querySelector("h1");
+// console.log(heading.textContent);
+// heading.style.color = "red";
+// heading.style.backgroundColor = "yellow";
+// heading.style.fontSize = "2rem";
+
+// const button = document.querySelector("#btn");
+// button.style.borderRadius = "20px";
+// button.style.padding = "10px 20px";
+// button.style.fontSize = "1rem";
+
+//  // ===============================
+//  //  Event Listeners - user interactions
+//  // ===============================
+
+//  button.addEventListener("click", function() {
+//     console.log("Button WAS clicked!");
+//     message.textContent = "You clicked the button";
+//     message.style.color = "green";
+    
+// });
+
+// let clickCount = 0;
+// button.addEventListener("click", function() {
+//     clickCount++;
+//     button.textContent = `Clicked ${clickCount} times`;
+//     console.log("Button clicked", clickCount, "times");
+//     button.style.backgroundColor = `hsl(${clickCount * 30}, 70%, 50%)`;
+// });
+
+// const display = document.querySelector(".message");
+// input.addEventListener("input", function() {
+//     const userText = input.value;
+//     display.textContent = `You typed: ${userText}`;
+//     display.style.fontSize = `${userText.length +10}px`;
+// });
+
+// // keyboard events
+// input.addEventListener("keydown", function(event) {
+//     console.log("Key pressed:", event.key);
+//     if (event.key === "Enter") {
+//         display.textContent = `You pressed Enter! text was ${input.value}`;
+//         console.log("Enter key pressed");
+//         input.value = "";  //clear input 
+//     }
+// }); 
+
+// === Interactive Score Tracker ===
+
+// Select elements
+const player1Btn = document.querySelector('.btn-add[data-player="1"]');
+const player2Btn = document.querySelector('.btn-add[data-player="2"]');
+const resetBtn = document.getElementById("btn-reset");
+const winningScoreInput = document.getElementById("winning-score");
+
+const score1Display = document.getElementById("score-1");
+const score2Display = document.getElementById("score-2");
+
+const statusText = document.querySelector(".status");
+const targetSpan = document.querySelector(".target");
+const winnerText = document.querySelector(".winner");
+const winnerName = document.querySelector(".winner-name");
+
+const player1Box = document.querySelector(".player-1");
+const player2Box = document.querySelector(".player-2");
+
+// Game state
+let scores = [0, 0];
+let winningScore = parseInt(winningScoreInput.value);
+let gameOver = false;
+
+// Update display
+function updateScores() {
+  score1Display.textContent = scores[0];
+  score2Display.textContent = scores[1];
+}
+
+// Check winner
+function checkWinner() {
+  if (scores[0] >= winningScore || scores[1] >= winningScore) {
+    gameOver = true;
+
+    const winner = scores[0] >= winningScore ? 1 : 2;
+    const loser = winner === 1 ? 2 : 1;
+
+    document.querySelector(`.player-${winner}`).classList.add("winner");
+    document.querySelector(`.player-${loser}`).classList.add("loser");
+
+    winnerName.textContent = `Player ${winner}`;
+    winnerText.classList.remove("hidden");
+    statusText.textContent = "Game Over!";
+  }
+}
+
+// Add point
+function addPoint(player) {
+  if (!gameOver) {
+    scores[player - 1]++;
+    updateScores();
+    checkWinner();
+  }
+}
+
+// Reset game
+function resetGame() {
+  scores = [0, 0];
+  gameOver = false;
+  updateScores();
+  winnerText.classList.add("hidden");
+
+  player1Box.classList.remove("winner", "loser");
+  player2Box.classList.remove("winner", "loser");
+
+  statusText.textContent = `First to ${winningScore} wins!`;
+}
+
+// Event listeners
+player1Btn.addEventListener("click", () => addPoint(1));
+player2Btn.addEventListener("click", () => addPoint(2));
+resetBtn.addEventListener("click", resetGame);
+
+winningScoreInput.addEventListener("change", function () {
+  winningScore = parseInt(this.value);
+  targetSpan.textContent = winningScore;
+  resetGame();
+});
+
+// Keyboard shortcuts
+document.addEventListener("keydown", function (event) {
+  if (event.key === "1") addPoint(1); // Press "1" for Player 1
+  if (event.key === "2") addPoint(2); // Press "2" for Player 2
+  if (event.key.toLowerCase() === "r") resetGame(); // Press "R" to reset
+});
+
+// Initialize
+updateScores();
