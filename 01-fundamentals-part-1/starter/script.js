@@ -236,7 +236,6 @@
 // // The modern way - ES6 Template Literals
 // const jonasNew = `I'm ${firstName}, a ${year - birthYear} year old ${job}!`;
 // console.log(jonasNew);
-<<<<<<< HEAD
 
 // // Any expression works inside ${}
 // console.log(`I'm ${2037 - 1991} years old`)
@@ -312,352 +311,278 @@
 
 
 
-////////////////////////////////////
-// Type Conversion and Coercion
-console.log("=== Type Conversion and Coercion ===");
-// type conversion (manual)
-const inputYear = "1991";
-console.log(Number(inputYear), inputYear); 
-console.log(Number(inputYear) + 18);
+// ////////////////////////////////////
+// // Type Conversion and Coercion
+// console.log("=== Type Conversion and Coercion ===");
+// // type conversion (manual)
+// const inputYear = "1991";
+// console.log(Number(inputYear), inputYear); 
+// console.log(Number(inputYear) + 18);
 
-console.log(Number("Aki")); 
-console.log(typeof NaN); 
+// console.log(Number("Aki")); 
+// console.log(typeof NaN); 
 
-console.log(String(23), 23); 
-console.log(typeof String(23)); 
+// console.log(String(23), 23); 
+// console.log(typeof String(23)); 
 
-// type coercion (automatic)
-console.log("I am " + 23 + " years old"); 
-console.log("23" - "10" - 3); 
-console.log("23" / "2"); 
-console.log("23" * "2"); 
-
-
-// guess the output
-let n = "1" + 1; //11
-n = n - 1; //10
-console.log(n);
-
-console.log(2 + 3 + 4 + "5"); 
-console.log("10" - "4" - "3" - 2 + "5");
-
-// Predict the output
-console.log("5" + 2); // "52"
-console.log("5" - 2); // 3
-console.log("5" * 2); // 10
-console.log("5" / 2); // 2.5
-
-// Convert values
-const userAge = "25"; 
-const userScore = 95;
-
-const ageNumber = Number(userAge); // string → number
-const scoreString = String(userScore); // number → string
-
-console.log(ageNumber, typeof ageNumber);
-console.log(scoreString, typeof scoreString);
+// // type coercion (automatic)
+// console.log("I am " + 23 + " years old"); 
+// console.log("23" - "10" - 3); 
+// console.log("23" / "2"); 
+// console.log("23" * "2"); 
 
 
+// // guess the output
+// let n = "1" + 1; //11
+// n = n - 1; //10
+// console.log(n);
 
+// console.log(2 + 3 + 4 + "5"); 
+// console.log("10" - "4" - "3" - 2 + "5");
 
-////////////////////////////////////
-// Equality Operators: == vs. ===
-console.log("=== Equality Operators: === vs == ===");
-const age = "18";
-if (age === 18) console.log("You just became an adult :D (strict)");
-if (age == 18) console.log("You just became an adult :D (loose)");
+// // Predict the output
+// console.log("5" + 2); // "52"
+// console.log("5" - 2); // 3
+// console.log("5" * 2); // 10
+// console.log("5" / 2); // 2.5
 
-// Let's see what happens:
-console.log("18" === 18); // false - different types
-console.log("18" == 18); // true - coercion happens
-console.log(18 === 18); // true - same type and value
+// // Convert values
+// const userAge = "25"; 
+// const userScore = 95;
 
-// Convert explicitly, then compare strictly
-const favourite = Number(prompt("What's your favourite number?"));
-console.log(favourite);
-console.log(typeof favourite);
+// const ageNumber = Number(userAge); // string → number
+// const scoreString = String(userScore); // number → string
 
-if (favourite === 23) {
-  console.log("Cool! 23 is an amazing number!");
-} else if (favourite === 7) {
-  console.log("7 is also a cool number");
-} else if (favourite === 9) {
-  console.log("9 is also a cool number");
-} else {
-  console.log("Number is not 23 or 7 or 9");
-}
-
-// Not-equal operator
-if (favourite !== 23) console.log("Why not 23?");
-
-
-//Exercise 1: Equality Detective
-console.log(5 === "5"); // false (different types)
-console.log(5 == "5");  // true  (string converted)
-console.log(true === 1); // false (boolean vs number)
-console.log(true == 1);  // true  (true → 1)
-console.log(false === 0); // false (boolean vs number)
-console.log(false == 0);  // true  (false → 0)
-
-//Exercise 2: Fix the Login System
-const username = prompt("Username:");
-const password = prompt("Password:");
-
-// Use strict equality
-if (username === "admin" && password === "1234") {
-  console.log("Welcome admin!");
-} else {
-  console.log("Access denied");
-}
+// console.log(ageNumber, typeof ageNumber);
+// console.log(scoreString, typeof scoreString);
 
 
 
-////////////////////////////////////
-// Logical Operators
-console.log("=== Logical Operators: ===");
-const hasDriversLicense = true; // A
-const hasGoodVision = true; // B
 
-console.log(hasDriversLicense && hasGoodVision); // AND: both must be true
-console.log(hasDriversLicense || hasGoodVision); // OR: one must be true
-console.log(!hasDriversLicense); // NOT: inverts the value
+// ////////////////////////////////////
+// // Equality Operators: == vs. ===
+// console.log("=== Equality Operators: === vs == ===");
+// const age = "18";
+// if (age === 18) console.log("You just became an adult :D (strict)");
+// if (age == 18) console.log("You just became an adult :D (loose)");
+
+// // Let's see what happens:
+// console.log("18" === 18); // false - different types
+// console.log("18" == 18); // true - coercion happens
+// console.log(18 === 18); // true - same type and value
+
+// // Convert explicitly, then compare strictly
+// const favourite = Number(prompt("What's your favourite number?"));
+// console.log(favourite);
+// console.log(typeof favourite);
+
+// if (favourite === 23) {
+//   console.log("Cool! 23 is an amazing number!");
+// } else if (favourite === 7) {
+//   console.log("7 is also a cool number");
+// } else if (favourite === 9) {
+//   console.log("9 is also a cool number");
+// } else {
+//   console.log("Number is not 23 or 7 or 9");
+// }
+
+// // Not-equal operator
+// if (favourite !== 23) console.log("Why not 23?");
+
+
+// //Exercise 1: Equality Detective
+// console.log(5 === "5"); // false (different types)
+// console.log(5 == "5");  // true  (string converted)
+// console.log(true === 1); // false (boolean vs number)
+// console.log(true == 1);  // true  (true → 1)
+// console.log(false === 0); // false (boolean vs number)
+// console.log(false == 0);  // true  (false → 0)
+
+// //Exercise 2: Fix the Login System
+// const username = prompt("Username:");
+// const password = prompt("Password:");
+
+// // Use strict equality
+// if (username === "admin" && password === "1234") {
+//   console.log("Welcome admin!");
+// } else {
+//   console.log("Access denied");
+// }
+
+
+
+// ////////////////////////////////////
+// // Logical Operators
+// console.log("=== Logical Operators: ===");
+// const hasDriversLicense = true; // A
+// const hasGoodVision = true; // B
+
+// console.log(hasDriversLicense && hasGoodVision); // AND: both must be true
+// console.log(hasDriversLicense || hasGoodVision); // OR: one must be true
+// console.log(!hasDriversLicense); // NOT: inverts the value
   
 
-//Real-World Example
-const isTired = false; // C
-console.log(hasDriversLicense && hasGoodVision && !isTired);
+// //Real-World Example
+// const isTired = false; // C
+// console.log(hasDriversLicense && hasGoodVision && !isTired);
 
-if (hasDriversLicense && hasGoodVision && !isTired) {
-  console.log("Sarah is able to drive!");
-} else {
-  console.log("Someone else should drive...");
-}
-
-// More complex scenarios
-const driverAge = 20;
-const hasPermission = true;
-const hasExperience = false;
-
-// Can drive if: (driverAge >= 18 OR has permission) AND has experience
-if ((driverAge >= 18 || hasPermission) && hasExperience) {
-  console.log("Approved to drive");
-} else {
-  console.log("Not approved to drive");
-}
-
-//Exercise 1: Club Entry System
-const clubAge = 19; 
-const hasID = true; 
-const isVIP = false;
-
-// Rule: (clubAge >= 21 && hasID) OR isVIP
-if ((clubAge >= 21 && hasID) || isVIP) {
-  console.log("Welcome to the club!");
-} else {
-  console.log("Sorry, you cannot enter");
-}
-
-//Exercise 2: Weather Advisor
-const temperature = 25; 
-const isRaining = false;
-const isWindy = true;
-
-// Rules
-if (temperature >= 20 && temperature <= 30 && !isRaining && !isWindy) {
-  console.log("Perfect day!");
-} else if (temperature >= 15 && temperature <= 35 && !isRaining) {
-  console.log("Good day!");
-} else {
-  console.log("Stay inside!");
-}
-
-
-
-////////////////////////////////////
-// The Conditional (Ternary) Operator
-console.log("=== The Conditional (Ternary) Operator: ===");
-const agee = 23;
-
-// Basic ternary
-const drink = agee >= 18 ? "wine 🍷" : "water 💧";
-console.log(drink);
-
-// Equivalent if/else
-let drink2;
-if (agee >= 18) {
-  drink2 = "wine 🍷";
-} else {
-  drink2 = "water 💧";
-}
-console.log(drink2);
-
-// Ternary inside template literals
-console.log(`I like to drink ${age >= 18 ? "wine 🍷" : "water 💧"}`);
-
-// ✅ Good ternary use
-const score = 75;
-const isLoggedIn = true;
-const isPremium = false;
-
-const status = score >= 60 ? "passed" : "failed";
-const message = isLoggedIn ? "Welcome back!" : "Please log in";
-const discount = isPremium ? 0.2 : 0.1;
-
-console.log(status, message, discount);
-
-// ✅ Use if/else for complex logic
-let grade;
-if (score >= 90) {
-  console.log("Excellent!");
-  grade = "A";
-} else if (score >= 80) {
-  console.log("Good job!");
-  grade = "B";
-} else {
-  grade = "C";
-}
-console.log(grade);
-
-
-//Exercise 1: Status Messages (Convert to Ternary)
-// 1. Login status
-const isLoggedIn2 = true;
-const welcomeMessage = isLoggedIn2 ? "Welcome back!" : "Please sign in";
-console.log(welcomeMessage);
-
-// 2. Price with discount
-const isPremium2 = false;
-const price = isPremium2 ? 100 * 0.8 : 100;
-console.log(price);
-
-//Exercise 2: Smart Responses
-const score2 = 85;
-const weather = "sunny";
-const battery = 15;
-
-// Score message
-console.log(`Your score: ${score2} (${score2 >= 60 ? "Passed" : "Failed"})`);
-
-// Weather message
-console.log(
-  `Weather is ${weather} (${
-    weather === "sunny" ? "Great for outdoor activities" : "Stay inside"
-  })`
-);
-
-// Battery message
-console.log(
-  `Battery: ${battery}% (${battery < 20 ? "Low battery warning" : "Battery OK"})`
-);
-
-////////////////////////////////////
-// Coding Challenge #4
-
-const bill = 275; // Test with 275, 40, and 430
-
-// Step 1: Tip calculation with ternary
-const tip = bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
-
-// Step 2: Output with template literal
-console.log(
-  `The bill was ${bill}, the tip was ${tip}, and the total value ${
-    bill + tip
-  }`
-);
-
-// Expected outputs:
-// Bill 275: "The bill was 275, the tip was 41.25, and the total value 316.25"
-// Bill 40:  "The bill was 40, the tip was 8, and the total value 48"
-// Bill 430: "The bill was 430, the tip was 86, and the total value 516"
-
-////////////////////////////////////
-// Coding Challenge #4
-
-function tipCalculator(bill) {
-  // Tip rule: 15% if bill is between 50 and 300, otherwise 20%
-  const tip = bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
-
-  // Output result
-  console.log(
-    `The bill was ${bill}, the tip was ${tip}, and the total value ${bill + tip}`
-  );
-}
-
-// Test cases
-tipCalculator(275); // 41.25 tip
-tipCalculator(40);  // 8 tip
-tipCalculator(430); // 86 tip
-=======
-
-// // Any expression works inside ${}
-// console.log(`I'm ${2037 - 1991} years old`)
-// console.log(`Math works: ${2 + 3} equals five`);
-// console.log(`Comparisons too: ${5 > 3}`);
-
-// console.log(`this is just a regular stringh?....`);
-
-// ////////////////////////////////////
-// // Taking Decisions: if / else Statements
-// const age = 15;
-// if (age >= 18){
-//     console.log(`Aki can start driving license🚗`);
-// }else{
-//     const  yearLeft = 18 - age;
-//     console.log(`Aki is too young. Wait another ${yearLeft} years!`);
-// }
-
-// ////////////////////////////////////
-// // Truthy and Falsy Values
-// console.log(Boolean(0)); // false
-// console.log(Boolean(undefined)); // false
-// console.log(Boolean("Jonas")); // true
-// console.log(Boolean({})); // true (empty object)
-// console.log(Boolean("")); // false (empty string)
-
-// const money = 100;
-
-// if (money) {
-//     console.log((`Dont spent it all ;`));
-// }else{
-//     console.log(`You should get a job!`);
-    
-// }
-
-// let height = 0;
-// if (height) {
-//     console.log(`yeyyyy Height is defined`);
+// if (hasDriversLicense && hasGoodVision && !isTired) {
+//   console.log("Sarah is able to drive!");
 // } else {
-//     console.log(`Height is UNDEFINED`);
+//   console.log("Someone else should drive...");
 // }
 
-// if (height !== undefined) {
-//   console.log("Height is defined");
+// // More complex scenarios
+// const driverAge = 20;
+// const hasPermission = true;
+// const hasExperience = false;
+
+// // Can drive if: (driverAge >= 18 OR has permission) AND has experience
+// if ((driverAge >= 18 || hasPermission) && hasExperience) {
+//   console.log("Approved to drive");
+// } else {
+//   console.log("Not approved to drive");
 // }
+
+// //Exercise 1: Club Entry System
+// const clubAge = 19; 
+// const hasID = true; 
+// const isVIP = false;
+
+// // Rule: (clubAge >= 21 && hasID) OR isVIP
+// if ((clubAge >= 21 && hasID) || isVIP) {
+//   console.log("Welcome to the club!");
+// } else {
+//   console.log("Sorry, you cannot enter");
+// }
+
+// //Exercise 2: Weather Advisor
+// const temperature = 25; 
+// const isRaining = false;
+// const isWindy = true;
+
+// // Rules
+// if (temperature >= 20 && temperature <= 30 && !isRaining && !isWindy) {
+//   console.log("Perfect day!");
+// } else if (temperature >= 15 && temperature <= 35 && !isRaining) {
+//   console.log("Good day!");
+// } else {
+//   console.log("Stay inside!");
+// }
+
+
 
 // ////////////////////////////////////
-// // Coding Challenge #2
+// // The Conditional (Ternary) Operator
+// console.log("=== The Conditional (Ternary) Operator: ===");
+// const agee = 23;
 
-// // Reuse your BMI calculation from Challenge #1
-// const massMark = 78;
-// const heightMark = 1.69;
-// const massJohn = 92;
-// const heightJohn = 1.95;
+// // Basic ternary
+// const drink = agee >= 18 ? "wine 🍷" : "water 💧";
+// console.log(drink);
 
-// const BMIMark = massMark / heightMark ** 2;
-// const BMIJohn = massJohn / (heightJohn * heightJohn);
-// console.log(BMIMark, BMIJohn);
-
-// // Your if/else statement here:
-// // Compare BMIs and create intelligent messages
-// // Use template literals for beautiful output
-
-// if (BMIMark > BMIJohn){
-//     console.log(`Marks BMI is ${BMIMark} and is higher than Johns BMI of ${BMIJohn} and it is higher than ${BMIJohn}`)
-    
-// } else if (BMIJohn > BMIMark){
-//     console.log(`Johns BMI is ${BMIJohn} and is higher than Marks BMI of ${BMIMark}`)
+// // Equivalent if/else
+// let drink2;
+// if (agee >= 18) {
+//   drink2 = "wine 🍷";
+// } else {
+//   drink2 = "water 💧";
 // }
-// else {
-//     console.log(`Both have the same BMI of ${BMIMark}`);
+// console.log(drink2);
+
+// // Ternary inside template literals
+// console.log(`I like to drink ${age >= 18 ? "wine 🍷" : "water 💧"}`);
+
+// // ✅ Good ternary use
+// const score = 75;
+// const isLoggedIn = true;
+// const isPremium = false;
+
+// const status = score >= 60 ? "passed" : "failed";
+// const message = isLoggedIn ? "Welcome back!" : "Please log in";
+// const discount = isPremium ? 0.2 : 0.1;
+
+// console.log(status, message, discount);
+
+// // ✅ Use if/else for complex logic
+// let grade;
+// if (score >= 90) {
+//   console.log("Excellent!");
+//   grade = "A";
+// } else if (score >= 80) {
+//   console.log("Good job!");
+//   grade = "B";
+// } else {
+//   grade = "C";
 // }
->>>>>>> aeef439565965c86d2f2e03a673a0f2f41e88e9f
+// console.log(grade);
+
+
+// //Exercise 1: Status Messages (Convert to Ternary)
+// // 1. Login status
+// const isLoggedIn2 = true;
+// const welcomeMessage = isLoggedIn2 ? "Welcome back!" : "Please sign in";
+// console.log(welcomeMessage);
+
+// // 2. Price with discount
+// const isPremium2 = false;
+// const price = isPremium2 ? 100 * 0.8 : 100;
+// console.log(price);
+
+// //Exercise 2: Smart Responses
+// const score2 = 85;
+// const weather = "sunny";
+// const battery = 15;
+
+// // Score message
+// console.log(`Your score: ${score2} (${score2 >= 60 ? "Passed" : "Failed"})`);
+
+// // Weather message
+// console.log(
+//   `Weather is ${weather} (${
+//     weather === "sunny" ? "Great for outdoor activities" : "Stay inside"
+//   })`
+// );
+
+// // Battery message
+// console.log(
+//   `Battery: ${battery}% (${battery < 20 ? "Low battery warning" : "Battery OK"})`
+// );
+
+// ////////////////////////////////////
+// // Coding Challenge #4
+
+// const bill = 275; // Test with 275, 40, and 430
+
+// // Step 1: Tip calculation with ternary
+// const tip = bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+
+// // Step 2: Output with template literal
+// console.log(
+//   `The bill was ${bill}, the tip was ${tip}, and the total value ${
+//     bill + tip
+//   }`
+// );
+
+// // Expected outputs:
+// // Bill 275: "The bill was 275, the tip was 41.25, and the total value 316.25"
+// // Bill 40:  "The bill was 40, the tip was 8, and the total value 48"
+// // Bill 430: "The bill was 430, the tip was 86, and the total value 516"
+
+// ////////////////////////////////////
+// // Coding Challenge #4
+
+// function tipCalculator(bill) {
+//   // Tip rule: 15% if bill is between 50 and 300, otherwise 20%
+//   const tip = bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+
+//   // Output result
+//   console.log(
+//     `The bill was ${bill}, the tip was ${tip}, and the total value ${bill + tip}`
+//   );
+// }
+
+// // Test cases
+// tipCalculator(275); // 41.25 tip
+// tipCalculator(40);  // 8 tip
+// tipCalculator(430); // 86 tip
