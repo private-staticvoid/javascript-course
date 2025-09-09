@@ -572,65 +572,65 @@ STEP 4: IMPLEMENT - Combine and reuse existing code
 // //   calculateAverageScore([1, 2, "bad", 4]);
 // // } catch (e) {
 // //   console.error(e.message);
-// // }
+// // // }
 
-////////////////////////////////////
-// BROWSER DEVELOPER TOOLS MASTERY
+// ////////////////////////////////////
+// // BROWSER DEVELOPER TOOLS MASTERY
 
-function demonstrateConsoleDebugging(data) {
-  console.group("Debugging Session");
+// function demonstrateConsoleDebugging(data) {
+//   console.group("Debugging Session");
 
-  console.log("Input data:", data);
+//   console.log("Input data:", data);
 
-  if (typeof data !== "object") {
-    console.warn("Warning: Expected object, got", typeof data);
-  }
+//   if (typeof data !== "object") {
+//     console.warn("Warning: Expected object, got", typeof data);
+//   }
 
-  console.table(data);
-  console.groupEnd();
+//   console.table(data);
+//   console.groupEnd();
 
-  return Array.isArray(data) ? data.length : Object.keys(data).length;
-}
+//   return Array.isArray(data) ? data.length : Object.keys(data).length;
+// }
 
-// Test console debugging with different data types
-const arrayData = [1, 2, 3, 4, 5];
-const objectData = { name: "John", age: 30, city: "New York" };
+// // Test console debugging with different data types
+// const arrayData = [1, 2, 3, 4, 5];
+// const objectData = { name: "John", age: 30, city: "New York" };
 
-demonstrateConsoleDebugging(arrayData);
-demonstrateConsoleDebugging(objectData);
+// demonstrateConsoleDebugging(arrayData);
+// demonstrateConsoleDebugging(objectData);
 
-////////////////////////////////////
-// DEBUGGER STATEMENT AND BREAKPOINTS
+// ////////////////////////////////////
+// // DEBUGGER STATEMENT AND BREAKPOINTS
 
-function stepThroughDebugging(numbers) {
-  debugger; // This will pause execution in browser dev tools
+// function stepThroughDebugging(numbers) {
+//   debugger; // This will pause execution in browser dev tools
 
-  let sum = 0;
-  let count = 0;
+//   let sum = 0;
+//   let count = 0;
 
-  for (let i = 0; i < numbers.length; i++) {
-    const currentNumber = numbers[i];
+//   for (let i = 0; i < numbers.length; i++) {
+//     const currentNumber = numbers[i];
 
-    console.log(`Processing index ${i}: value = ${currentNumber}`);
+//     console.log(`Processing index ${i}: value = ${currentNumber}`);
 
-    if (typeof currentNumber === "number") {
-      sum += currentNumber;
-      count++;
-    } else {
-      console.error(`Invalid number at index ${i}:`, currentNumber);
-    }
-  }
+//     if (typeof currentNumber === "number") {
+//       sum += currentNumber;
+//       count++;
+//     } else {
+//       console.error(`Invalid number at index ${i}:`, currentNumber);
+//     }
+//   }
 
-  const average = count > 0 ? sum / count : 0;
-  console.log("Final results:", { sum, count, average });
+//   const average = count > 0 ? sum / count : 0;
+//   console.log("Final results:", { sum, count, average });
 
-  return average;
-}
+//   return average;
+// }
 
-// Test debugging function - open dev tools to see debugger in action
-const mixedNumbers = [10, 20, "error", 30, null, 40];
-const debugResult = stepThroughDebugging(mixedNumbers);
-console.log("Debug session result:", debugResult);
+// // Test debugging function - open dev tools to see debugger in action
+// const mixedNumbers = [10, 20, "error", 30, null, 40];
+// const debugResult = stepThroughDebugging(mixedNumbers);
+// console.log("Debug session result:", debugResult);
 
 ////////////////////////////////////
 // SYSTEMATIC BUG FIXING APPLICATION
@@ -657,64 +657,444 @@ STEP 4: FIX ✅
 - Change <= to < in loop condition
 - Remove + 1 from division
 
-STEP 5: PREVENT ✅
-- Add input validation
-- Add type checking for array elements
-- Handle edge cases gracefully
-*/
+// STEP 5: PREVENT ✅
+// - Add input validation
+// - Add type checking for array elements
+// - Handle edge cases gracefully
+// */
 
-function calculateAverageScoreFixed(scores) {
-  // STEP 5 - PREVENT: Add input validation
-  if (!Array.isArray(scores) || scores.length === 0) {
-    console.error("Invalid input: scores must be a non-empty array");
-    return 0;
+// function calculateAverageScoreFixed(scores) {
+//   // STEP 5 - PREVENT: Add input validation
+//   if (!Array.isArray(scores) || scores.length === 0) {
+//     console.error("Invalid input: scores must be a non-empty array");
+//     return 0;
+//   }
+
+//   // STEP 4 - FIX: Proper initialization
+//   let total = 0; // FIXED: Initialize to 0, not undefined
+
+//   // STEP 4 - FIX: Correct loop condition
+//   for (let i = 0; i < scores.length; i++) {
+//     // FIXED: < instead of <=
+//     // STEP 5 - PREVENT: Add type checking
+//     if (typeof scores[i] === "number" && !Number.isNaN(scores[i])) {
+//       total += scores[i];
+//     } else {
+//       console.warn(`Skipping non-number value at index ${i}:`, scores[i]);
+//     }
+//   }
+
+//   // STEP 4 - FIX: Correct division
+//   return total / scores.length; // FIXED: Remove + 1
+// }
+
+// // ===============================
+// // Comprehensive Debugging Tests
+// // ===============================
+
+// console.group("Debugging Verification Tests");
+
+// // Test 1 - Normal case
+// const normalScores = [85, 92, 78, 96, 88];
+// const normalResult = calculateAverageScoreFixed(normalScores);
+// console.log("Test 1 - Normal case result:", normalResult); // ✅ 87.8
+
+// // Test 2 - Edge case with invalid data
+// const mixedScores = [85, "invalid", 92, null, 78];
+// const mixedResult = calculateAverageScoreFixed(mixedScores);
+// console.log("Test 2 - Mixed data result:", mixedResult); // ✅ Should average valid numbers only
+
+// // Test 3 - Error case with invalid input
+// const errorResult = calculateAverageScoreFixed("not an array");
+// console.log("Test 3 - Error case result:", errorResult); // ✅ 0 with error message
+
+// // Test 4 - Edge case with empty array
+// const emptyResult = calculateAverageScoreFixed([]);
+// console.log("Test 4 - Empty array result:", emptyResult); // ✅ 0 with error message
+
+// console.groupEnd();
+
+// console.log("Systematic debugging process successfully applied!");
+// console.log(
+//   "All bugs identified, isolated, investigated, fixed, and prevented 🎉"
+// );
+
+// // Developer Skills Hour 4 - Advanced Problem-Solving & Real-World Challenges
+// "use strict";
+
+// console.log("=== HOUR 4: ADVANCED PROBLEM-SOLVING MASTERY ===");
+
+// /*
+// Your Developer Transformation Today:
+// Hour 1: Professional tools and environment ✅
+// Hour 2: Problem-solving framework and mindset ✅
+// Hour 3: Research and debugging mastery ✅
+// Hour 4: Apply everything to real challenges
+
+// You're now solving unfamiliar problems independently.
+// */
+
+// console.log("Ready to tackle complex problems using systematic approaches");
+// console.log("Challenge: Build solutions that work under pressure");
+
+// ////////////////////////////////////
+// // MAIN CHALLENGE: Weather Forecast String Builder
+
+// /*
+// WEATHER FORECAST CHALLENGE:
+// Apply 4-step framework systematically:
+// 1. UNDERSTAND:
+//    - Transform an array of temps into a formatted forecast string
+//    - Day numbering starts at 1 (index + 1)
+//    - Format: "...17°C in 1 days...21°C in 2 days...23°C in 3 days..."
+//    - Handle arrays of any length
+// 2. DIVIDE:
+//    - Loop/iterate through array
+//    - Format each temperature with its day
+//    - Concatenate into one string with separators
+//    - Add starting/ending dots
+// 3. RESEARCH:
+//    - String concatenation vs template literals
+//    - Array methods (map, join, reduce) as alternatives
+// 4. IMPLEMENT:
+//    - Start with loop solution, then provide alternatives
+// */
+
+// const data1 = [17, 21, 23];
+// const data2 = [12, 5, -5, 0, 4];
+
+// // Primary loop-based solution
+// function printForecast(arr) {
+//   // Start with empty string accumulator
+//   let str = "";
+
+//   // Loop through array to build formatted string
+//   for (let i = 0; i < arr.length; i++) {
+//     str += `${arr[i]}°C in ${i + 1} days ... `;
+//   }
+
+//   // Add starting dots and log final result
+//   console.log("..." + str);
+// }
+
+// // Test with provided data
+// console.log("Primary loop solution:");
+// printForecast(data1);
+// printForecast(data2);
+
+// console.log("Weather forecast formatter working correctly!");
+
+// ////////////////////////////////////
+// // ALTERNATIVE IMPLEMENTATIONS
+
+// // Alternative 1 - Using array.map() + join()
+// function printForecastMap(arr) {
+//   const formatted = arr.map((temp, index) => `${temp}°C in ${index + 1} days`);
+//   console.log("..." + formatted.join(" ... ") + " ...");
+// }
+
+// // Alternative 2 - Using array.reduce()
+// function printForecastReduce(arr) {
+//   const result = arr.reduce(
+//     (acc, temp, index) => acc + `${temp}°C in ${index + 1} days ... `,
+//     "..."
+//   );
+//   console.log(result);
+// }
+
+// // Test alternative approaches
+// console.log("\nTesting alternative implementations:");
+// printForecastMap(data1);
+// printForecastReduce(data1);
+
+// ////////////////////////////////////
+// // TIME-PRESSURED CHALLENGE: Work Hours Analyzer
+
+// /*
+// JOB INTERVIEW SIMULATION (Non-Optimized):
+// You have 10 minutes. Focus on correctness, not polish.
+// Main goals:
+// 1. Total hours
+// 2. Average hours
+// 3. Day with most hours
+// 4. Days worked
+// 5. Full-time check
+// */
+
+// function analyzeWorkWeek(dailyHours) {
+//   // 1. Total hours (reduce pattern)
+//   const totalHours = dailyHours.reduce((sum, h) => sum + h, 0);
+
+//   // 2. Average hours (total ÷ 7 days, rounded to 1 decimal)
+//   const averageHours = Math.round((totalHours / dailyHours.length) * 10) / 10;
+
+//   // 3. Find max hours + which day it happened
+//   const maxHours = Math.max(...dailyHours);
+//   const maxDayIndex = dailyHours.indexOf(maxHours);
+//   const days = [
+//     "Monday",
+//     "Tuesday",
+//     "Wednesday",
+//     "Thursday",
+//     "Friday",
+//     "Saturday",
+//     "Sunday",
+//   ];
+//   const maxDay = days[maxDayIndex];
+
+//   // 4. Count non-zero days
+//   const daysWorked = dailyHours.filter((h) => h > 0).length;
+
+//   // 5. Check full-time (35+ hours)
+//   const isFullTime = totalHours >= 35;
+
+//   return {
+//     totalHours,
+//     averageHours,
+//     maxDay,
+//     daysWorked,
+//     isFullTime,
+//   };
+// }
+
+// // Quick test
+// const weeklyHours = [7.5, 8, 6.5, 0, 8.5, 4, 0];
+// console.log("Non-optimized:", analyzeWorkWeek(weeklyHours));
+
+// ////////////////////////////////////
+// // OPTIMIZED VERSION: Work Hours Analyzer
+
+// /*
+// Optimized & Polished:
+// - Adds input validation (must be 7 numbers)
+// - Extracts reusable constants (days of week)
+// - Includes list of all working days
+// - Cleaner, more robust
+// */
+
+// const dayNames = [
+//   "Monday",
+//   "Tuesday",
+//   "Wednesday",
+//   "Thursday",
+//   "Friday",
+//   "Saturday",
+//   "Sunday",
+// ];
+
+// function analyzeWorkWeekOptimized(dailyHours) {
+//   // Validate input
+//   if (!Array.isArray(dailyHours) || dailyHours.length !== 7) {
+//     console.error("❌ Invalid input: must be an array of 7 numbers.");
+//     return null;
+//   }
+
+//   // Ensure all values are numbers
+//   if (!dailyHours.every((h) => typeof h === "number" && !isNaN(h))) {
+//     console.error("❌ Invalid input: all values must be numbers.");
+//     return null;
+//   }
+
+//   // 1. Total hours
+//   const totalHours = dailyHours.reduce((sum, h) => sum + h, 0);
+
+//   // 2. Average (1 decimal place)
+//   const averageHours = Math.round((totalHours / 7) * 10) / 10;
+
+//   // 3. Max hours + day
+//   const maxHours = Math.max(...dailyHours);
+//   const maxDay = dayNames[dailyHours.indexOf(maxHours)];
+
+//   // 4. Count worked days + list them
+//   const workingDays = dailyHours
+//     .map((h, i) => (h > 0 ? dayNames[i] : null))
+//     .filter((d) => d !== null);
+//   const daysWorked = workingDays.length;
+
+//   // 5. Full-time check
+//   const isFullTime = totalHours >= 35;
+
+//   return {
+//     totalHours,
+//     averageHours,
+//     maxDay,
+//     daysWorked,
+//     workingDays,
+//     isFullTime,
+//   };
+// }
+
+// // Optimized test
+// const optimizedAnalysis = analyzeWorkWeekOptimized(weeklyHours);
+// console.log("Optimized:", optimizedAnalysis);
+
+// // Quick fixed version — small changes, keep original structure
+// function legacyForecastFixed(temperatures) {
+//   if (!Array.isArray(temperatures)) {
+//     console.error("legacyForecastFixed: Expected an array of temperatures");
+//     return "";
+//   }
+//   if (temperatures.length === 0) return "No forecast data.";
+
+//   let result = "";
+//   for (let i = 0; i < temperatures.length; i++) {
+//     const value = temperatures[i];
+//     // Skip invalid entries but warn
+//     if (typeof value !== "number" || Number.isNaN(value)) {
+//       console.warn(`Skipping invalid temperature at index ${i}:`, value);
+//       continue;
+//     }
+
+//     // Keep similar wording to original but fixed indexing
+//     result = result + value + " degrees in day " + (i + 1);
+//     if (i < temperatures.length - 1) result += ", ";
+//   }
+//   return result;
+// }
+
+// // Test quick fix
+// const testDataLegacy = [15, 18, 22, 19];
+// console.log("Quick fixed output:", legacyForecastFixed(testDataLegacy));
+
+// // Enhanced & optimized forecast function with options
+// function legacyForecastEnhanced(temperatures, options = {}) {
+//   /*
+//     options:
+//       - unit: 'C' | 'F'         (default: 'C')
+//       - includeDots: true|false (default: true) adds "..." before and after
+//       - separator: string       (default: ' ... ')
+//       - returnObjects: boolean  (default: false) -> returns array of { day, temp, unit, text }
+//       - roundDecimals: number   (default: 0) number of decimals for displayed temperature
+//   */
+
+//   const defaults = {
+//     unit: "C",
+//     includeDots: true,
+//     separator: " ... ",
+//     returnObjects: false,
+//     roundDecimals: 0,
+//   };
+//   const opts = { ...defaults, ...options };
+
+//   // Input validation
+//   if (!Array.isArray(temperatures)) {
+//     console.error("legacyForecastEnhanced: Expected an array of temperatures");
+//     return null;
+//   }
+//   if (temperatures.length === 0)
+//     return opts.returnObjects ? [] : "No forecast data.";
+
+//   // Helper to convert and round temp if needed
+//   const formatTemp = (celsius) => {
+//     let t = celsius;
+//     if (opts.unit === "F") {
+//       t = (celsius * 9) / 5 + 32;
+//     }
+//     const factor = Math.pow(10, Math.max(0, opts.roundDecimals));
+//     return Math.round(t * factor) / factor;
+//   };
+
+//   // Build entries
+//   const entries = temperatures
+//     .map((val, idx) => {
+//       if (typeof val !== "number" || Number.isNaN(val)) {
+//         console.warn(
+//           `legacyForecastEnhanced: skipping invalid value at index ${idx}:`,
+//           val
+//         );
+//         return null;
+//       }
+//       const day = idx + 1;
+//       const tempFormatted = formatTemp(val);
+//       const unitLabel = opts.unit;
+//       const dayWord = day === 1 ? "day" : "days";
+//       const text = `${tempFormatted}°${unitLabel} in ${day} ${dayWord}`;
+//       return { day, temp: tempFormatted, unit: unitLabel, text };
+//     })
+//     .filter(Boolean); // remove nulls
+
+//   if (entries.length === 0) {
+//     return opts.returnObjects ? [] : "No valid forecast data.";
+//   }
+
+//   if (opts.returnObjects) {
+//     return entries;
+//   }
+
+//   // Join into one string efficiently
+//   const body = entries.map((e) => e.text).join(opts.separator);
+//   const final =
+//     (opts.includeDots ? "..." : "") + body + (opts.includeDots ? "..." : "");
+//   return final;
+// }
+
+// // ----------------- Tests -----------------
+// const testData = [15, 18, 22, 19];
+// const testData2 = [17, "error", 21, null, 23];
+
+// // Default enhanced (Celsius)
+// console.log("Enhanced (default):", legacyForecastEnhanced(testData));
+
+// // Fancy: Fahrenheit with 1 decimal
+// console.log(
+//   "Enhanced (F, 1 decimal):",
+//   legacyForecastEnhanced(testData, { unit: "F", roundDecimals: 1 })
+// );
+
+// // Return structured objects
+// console.log(
+//   "Enhanced (objects):",
+//   legacyForecastEnhanced(testData, { returnObjects: true })
+// );
+
+// // Handles invalid entries gracefully
+// console.log("Enhanced (with invalids):", legacyForecastEnhanced(testData2));
+
+// // Custom separator & no dots
+// console.log(
+//   "Custom formatting:",
+//   legacyForecastEnhanced(testData, { includeDots: false, separator: " | " })
+// );
+
+///////////////////////////////////
+// SYSTEMATIC DEBUGGING AND ENHANCEMENT
+
+// Completely fixed and enhanced version
+function enhancedForecastFunction(temperatures, options = {}) {
+  // Step 5 - PREVENT: Add comprehensive input validation
+  if (!Array.isArray(temperatures) || temperatures.length === 0) {
+    console.error("Invalid input: temperatures must be a non-empty array");
+    return "";
   }
 
-  // STEP 4 - FIX: Proper initialization
-  let total = 0; // FIXED: Initialize to 0, not undefined
+  // Step 4 - FIX: Use modern JavaScript with proper declarations
+  const { unit = "°C", separator = " ... ", includeIndex = true } = options;
 
-  // STEP 4 - FIX: Correct loop condition
-  for (let i = 0; i < scores.length; i++) {
-    // FIXED: < instead of <=
-    // STEP 5 - PREVENT: Add type checking
-    if (typeof scores[i] === "number" && !Number.isNaN(scores[i])) {
-      total += scores[i];
-    } else {
-      console.warn(`Skipping non-number value at index ${i}:`, scores[i]);
-    }
+  // Step 4 - FIX: Correct loop bounds and string building
+  const parts = [];
+  for (let i = 0; i < temperatures.length; i++) {
+    const dayNumber = includeIndex ? i + 1 : i;
+    const dayWord = dayNumber === 1 ? "day" : "days";
+    parts.push(`${temperatures[i]}${unit} in ${dayNumber} ${dayWord}`);
   }
 
-  // STEP 4 - FIX: Correct division
-  return total / scores.length; // FIXED: Remove + 1
+  // Step 5 - PREVENT: Return clean result with separators and leading/trailing dots
+  return "..." + parts.join(separator) + "...";
 }
 
-// ===============================
-// Comprehensive Debugging Tests
-// ===============================
+// ----------------- Tests -----------------
+const testData = [15, 18, 22, 19];
 
-console.group("Debugging Verification Tests");
+console.log("Enhanced function (default):", enhancedForecastFunction(testData));
 
-// Test 1 - Normal case
-const normalScores = [85, 92, 78, 96, 88];
-const normalResult = calculateAverageScoreFixed(normalScores);
-console.log("Test 1 - Normal case result:", normalResult); // ✅ 87.8
-
-// Test 2 - Edge case with invalid data
-const mixedScores = [85, "invalid", 92, null, 78];
-const mixedResult = calculateAverageScoreFixed(mixedScores);
-console.log("Test 2 - Mixed data result:", mixedResult); // ✅ Should average valid numbers only
-
-// Test 3 - Error case with invalid input
-const errorResult = calculateAverageScoreFixed("not an array");
-console.log("Test 3 - Error case result:", errorResult); // ✅ 0 with error message
-
-// Test 4 - Edge case with empty array
-const emptyResult = calculateAverageScoreFixed([]);
-console.log("Test 4 - Empty array result:", emptyResult); // ✅ 0 with error message
-
-console.groupEnd();
-
-console.log("Systematic debugging process successfully applied!");
 console.log(
-  "All bugs identified, isolated, investigated, fixed, and prevented 🎉"
+  "Enhanced function (custom):",
+  enhancedForecastFunction(testData, {
+    unit: "°F",
+    separator: " | ",
+    includeIndex: true,
+  })
 );
+
+console.log("🎯 Complete developer skills successfully applied!");
+console.log("Legacy code debugged, fixed, and enhanced systematically");
