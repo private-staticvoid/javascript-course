@@ -68,10 +68,23 @@ document.querySelector(`.check`).addEventListener('click', function () {
 
   const guess = Number(document.querySelector('.guess').value);
 
+  //if you did not inpuit any number it shows this
+  if (!guess) {
+    document.querySelector(`.message`).textContent = ' No Number!';
+    return;
+  }
+
+  if (guess < 1 || guess > 20) {
+    document.querySelector(`.message`).textContent =
+      ' Number must be between 1 and 20!';
+    return;
+  }
+
   if (guess === secretNumber) {
     console.log('Correct Guess, Player Wins! 🎉');
     document.querySelector(`.message`).textContent = '🎉 Correct Number!';
     document.querySelector(`.number`).textContent = secretNumber;
+    document.body.style.backgroundColor = '#60b347';
     if (score > highscore) {
       highscore = score;
       document.querySelector(`.highscore`).textContent = highscore;
@@ -86,23 +99,27 @@ document.querySelector(`.check`).addEventListener('click', function () {
     document.querySelector(`.message`).textContent = '📈 Too High!';
     score--;
     document.querySelector(`.score`).textContent = score;
+
     if (score < 1) {
       document.querySelector(`.message`).textContent =
         ' You are a loser Dummy ';
       document.querySelector(`.number`).textContent = secretNumber;
       document.querySelector(`.guess`).disabled = true;
       document.querySelector(`.check`).disabled = true;
+      document.body.style.backgroundColor = '#ff0000';
     }
   } else if (guess < secretNumber) {
     console.log('Number Too Low!');
     document.querySelector(`.message`).textContent = '📉 Too Low!';
     score--;
     document.querySelector(`.score`).textContent = score;
+
     if (score < 1) {
       document.querySelector(`.message`).textContent = ' You are a loser Dummy';
       document.querySelector(`.number`).textContent = secretNumber;
       document.querySelector(`.guess`).disabled = true;
       document.querySelector(`.check`).disabled = true;
+      document.body.style.backgroundColor = `#ff0000`;
     }
   }
 });
@@ -114,7 +131,9 @@ document.querySelector(`.again`).addEventListener(`click`, function () {
   console.log(`Your New Secret Number: `, secretNumber);
   document.querySelector(`.message`).textContent = `Start guessing....`;
   document.querySelector(`.number`).textContent = `?`;
+  document.querySelector(`.score`).textContent = score;
   document.querySelector(`.guess`).value = ``;
   document.querySelector(`.guess`).disabled = false;
   document.querySelector(`.check`).disabled = false;
+  document.body.style.backgroundColor = ``;
 });
