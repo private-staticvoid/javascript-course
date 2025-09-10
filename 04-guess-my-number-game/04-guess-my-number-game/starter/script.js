@@ -72,11 +72,49 @@ document.querySelector(`.check`).addEventListener('click', function () {
     console.log('Correct Guess, Player Wins! 🎉');
     document.querySelector(`.message`).textContent = '🎉 Correct Number!';
     document.querySelector(`.number`).textContent = secretNumber;
+    if (score > highscore) {
+      highscore = score;
+      document.querySelector(`.highscore`).textContent = highscore;
+      document.querySelector(
+        `.message`
+      ).textContent = `You are a winner Baby!🎉`;
+      document.querySelector(`.guess`).disabled = true;
+      document.querySelector(`.check`).disabled = true;
+    }
   } else if (guess > secretNumber) {
     console.log('Number Too High!');
     document.querySelector(`.message`).textContent = '📈 Too High!';
+    score--;
+    document.querySelector(`.score`).textContent = score;
+    if (score < 1) {
+      document.querySelector(`.message`).textContent =
+        ' You are a loser Dummy ';
+      document.querySelector(`.number`).textContent = secretNumber;
+      document.querySelector(`.guess`).disabled = true;
+      document.querySelector(`.check`).disabled = true;
+    }
   } else if (guess < secretNumber) {
     console.log('Number Too Low!');
     document.querySelector(`.message`).textContent = '📉 Too Low!';
+    score--;
+    document.querySelector(`.score`).textContent = score;
+    if (score < 1) {
+      document.querySelector(`.message`).textContent = ' You are a loser Dummy';
+      document.querySelector(`.number`).textContent = secretNumber;
+      document.querySelector(`.guess`).disabled = true;
+      document.querySelector(`.check`).disabled = true;
+    }
   }
+});
+
+document.querySelector(`.again`).addEventListener(`click`, function () {
+  console.log(`again is working`);
+  score = 20;
+  secretNumber = Math.trunc(Math.random() * 20) + 1;
+  console.log(`Your New Secret Number: `, secretNumber);
+  document.querySelector(`.message`).textContent = `Start guessing....`;
+  document.querySelector(`.number`).textContent = `?`;
+  document.querySelector(`.guess`).value = ``;
+  document.querySelector(`.guess`).disabled = false;
+  document.querySelector(`.check`).disabled = false;
 });
