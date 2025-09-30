@@ -60,7 +60,7 @@ git add 06-pig-game/
 
 ```bash
 # Commit with descriptive message
-git commit -m "feat: add pig game starter files and documentation"
+
 ```
 
 ```bash
