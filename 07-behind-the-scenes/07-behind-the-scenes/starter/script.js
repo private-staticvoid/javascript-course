@@ -105,3 +105,98 @@
 
 // console.log(`deepOriginal`, deepOriginal);
 // console.log(deepCopy);
+
+// Example of an object with a method
+// const person = {
+//   name: 'Jonas',
+//   greet: function () {
+//     console.log(`Hello I am ${this.name}`);
+//   },
+// };
+
+// person.greet(); // Logs: "Hello I am Jonas"
+
+// Borrowing methods: another object can use the same function
+// const anotherPerson = { name: 'Sarah' };
+// anotherPerson.greet = person.greet;
+// anotherPerson.greet(); // Logs: "Hello I am Sarah"
+
+// Losing 'this' context: assigning method to a variable
+// const greetFuction = person.greet;
+// greetFuction(); // Logs: "Hello I am undefined" (or error in strict mode)
+// because 'this' is no longer bound to an object.
+
+// Difference between regular vs arrow functions in objects
+// const obj = {
+//   name: 'Objects',
+//   regularMethod: function () {
+//     console.log('Regular: ', this.name); // 'this' refers to obj
+//   },
+//   arrowMethod: () => {
+//     console.log('Arrow: ', this.name); // 'this' does NOT refer to obj,
+//     // instead it refers to the surrounding scope (likely undefined or global).
+//   },
+// };
+
+// obj.regularMethod(); // Works -> "Regular: Objects"
+// obj.arrowMethod();   // Likely undefined -> "Arrow: undefined"
+
+// Using 'this' inside setTimeout (older workaround vs modern arrow)
+// const timer = {
+//   name: 'Timer',
+//   start: function () {
+//     console.log(`${this.name} starting...`);
+
+//     const self = this; // capture 'this' in a variable
+
+//     setTimeout(function () {
+//       // 'this' inside here would normally lose context,
+//       // so we use 'self' instead
+//       console.log(`${self.name} finished.`);
+//     }, 1000);
+//   },
+//   startModern: function () {
+//     console.log(`${this.name} starting modern...`);
+
+//     // Arrow function keeps 'this' from the surrounding context
+//     setTimeout(() => {
+//       console.log(`${this.name} finished modern.`);
+//     }, 1500);
+//   },
+// };
+
+// timer.start();
+// timer.startModern();
+
+// Demonstrating function types and arguments behavior
+const functionTypes = {
+  // Regular function: has its own 'arguments' object
+  regularFunction: function () {
+    console.log('Arguments length:', arguments.length);
+    console.log('First argument:', arguments[0]);
+  },
+
+  // Arrow function: does NOT have its own 'arguments',
+  // it will reference outer scope's 'arguments' instead
+  arrowFunction: () => {
+    console.log(arguments); // refers to outer 'arguments' (not reliable here)
+    console.log('Arrow function called');
+  },
+
+  // Modern function with rest parameters:
+  // captures arguments in 'args' array
+  modernFunction: (...args) => {
+    console.log('Args length:', args.length);
+    console.log('First arg:', args[0]);
+  },
+};
+
+// Calling the functions
+functionTypes.regularFunction('hello', 'world');
+// → "Arguments length: 2", "First argument: hello"
+
+// functionTypes.arrowFunction('test');
+// → Would throw an error if uncommented because 'arguments' is not defined properly in this context
+
+functionTypes.modernFunction('modern', 'approach');
+// → "Args length: 2", "First arg: modern"
