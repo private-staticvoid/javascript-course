@@ -14,6 +14,7 @@ const current1El = document.getElementById('current--1');
 const diceEl = document.querySelector('.dice');
 const btnRollEl = document.querySelector('.btn--roll');
 const btnHoldEl = document.querySelector('.btn--hold');
+const btnNewEl = document.querySelector('.btn--new');
 
 //  game initializaion function
 
@@ -29,6 +30,11 @@ const init = function () {
   current1El.textContent = 0;
 
   diceEl.classList.add('hidden');
+
+  player0El.classList.remove('player--winner');
+  player1El.classList.remove('player--winner');
+  player0El.classList.add('player--active');
+  player1El.classList.remove('player--active');
 };
 
 init();
@@ -98,3 +104,5 @@ btnHoldEl.addEventListener('click', function () {
     }
   }
 });
+
+btnNewEl.addEventListener('click', init);
