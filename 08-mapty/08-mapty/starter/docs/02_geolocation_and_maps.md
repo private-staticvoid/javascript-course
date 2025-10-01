@@ -67,15 +67,7 @@ function getPosition() {
   if (navigator.geolocation) {
     console.log('🔍 Requesting user location...');
     navigator.geolocation.getCurrentPosition(
-      function (position) {
-        const { latitude } = position.coords;
-        const { longitude } = position.coords;
-        console.log(`Your current location: ${latitude}, ${longitude}`);
-
-        // Create a Google Maps link to verify the location
-        const googleMapsUrl = `https://www.google.pt/maps/@${latitude},${longitude}`;
-        console.log(`View on Google Maps: ${googleMapsUrl}`);
-      },
+      loadMap.
       function (error) {
         console.error('Geolocation error:', error);
 
@@ -98,6 +90,7 @@ function getPosition() {
         }
 
         alert(`📍 ${message}`);
+        loadDefaultMap();
       },
       {
         timeout: 10000,
@@ -107,6 +100,7 @@ function getPosition() {
     );
   } else {
     alert('❌ Geolocation is not supported by this browser');
+    loadDefaultMap();
   }
 }
 
