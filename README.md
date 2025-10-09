@@ -1,5 +1,5 @@
 # 🚀 JavaScript Fundamentals Course
-
+ 
 Welcome to your complete JavaScript learning journey! This repository contains everything you need to master JavaScript fundamentals and build real applications.
 
 ## 📋 Course Overview
